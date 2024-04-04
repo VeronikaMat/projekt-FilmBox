@@ -1,5 +1,5 @@
-const filmy = [
-	{
+const filmy = [{
+	
 		id: 'pelisky',
 		nazev: 'Pelíšky',
 		plakat: {
@@ -104,3 +104,4 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
