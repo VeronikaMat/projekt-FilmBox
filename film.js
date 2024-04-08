@@ -104,3 +104,46 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+//5  Detail filmu
+const detailFilmu = document.querySelector('#detail-filmu')
+const nazevFilmu = document.querySelector('.card-title')
+const popisFilmu = document.querySelector('.card-text')
+const plakatFilmu = document.querySelector('.col-md-5')
+if (document.querySelector('#detail-filmu')) {
+	let vybranyFilmId = location.hash.slice(1)
+	filmy.forEach((film) => {
+		if (vybranyFilmId === film.id) {
+			nazevFilmu.textContent = `${film.nazev}`
+			popisFilmu.textContent = `${film.popis}`
+			plakatFilmu.innerHTML = `<img
+			src="${film.plakat.url}"
+			alt="plakát"
+			class="img-fluid rounded-start"
+			width="663"
+			height="909"
+		/>`
+		}
+	})
+}
+
+//8 Poznámka
+const textPole = document.querySelector('#message-input')
+const policko = document.querySelector('#terms-checkbox')
+if (document.querySelector('#note-form')) {
+	const formular = document.querySelector('#note-form')
+	formular.addEventListener('submit', (evt) => {
+		evt.preventDefault()
+		if (textPole.value != '') {
+			if (!policko.checked) {
+				policko.classList.add('is-invalid')
+				policko.focus()
+			} else if (policko.checked) {
+				formular.innerHTML = `<p class="card-text">${textPole.value}</p>`
+			}
+		} else if (textPole.value === '') {
+			textPole.classList.add('is-invalid')
+			textPole.focus()
+		}
+	})
+}
