@@ -109,7 +109,7 @@ const filmy = [
 const detailFilmu = document.querySelector('#detail-filmu')
 const nazevFilmu = document.querySelector('.card-title')
 const popisFilmu = document.querySelector('.card-text')
-const plakatFilmu = document.querySelector('.col-md-5')
+const plakatFilmu = document.querySelector('.plakat-container')
 if (document.querySelector('#detail-filmu')) {
 	let vybranyFilmId = location.hash.slice(1)
 	filmy.forEach((film) => {
